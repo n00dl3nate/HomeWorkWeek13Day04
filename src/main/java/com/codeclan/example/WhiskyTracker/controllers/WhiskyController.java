@@ -28,9 +28,9 @@ public class WhiskyController {
         return whiskyRepository.getAllWhiskysByRegion(region);
     }
 
-    @GetMapping(value = "/region/{region}/{year}")
-    public List<Whisky> allWhiskeyByRegionAndYear(@PathVariable String region,@PathVariable int year){
-        return whiskyRepository.getAllWhiskyByYearAndRegion(year,region);
+    @GetMapping(value = "/name/{name}/{year}")
+    public List<Whisky> allWhiskeyByNameAndYear(@PathVariable String name,@PathVariable int year){
+        return whiskyRepository.getAllWhiskyByNameAndYear(year,name);
     }
 
 }

@@ -61,7 +61,7 @@ public class WhiskyRepositoryImpl implements WhiskyRepositoryCustom {
         return results;
     }
 
-    public List<Whisky> getAllWhiskyByYearAndRegion(int year ,String region){
+    public List<Whisky> getAllWhiskyByNameAndYear(int year ,String name){
         List<Whisky> result = null;
 
         Session session = entityManager.unwrap(Session.class);
@@ -69,7 +69,7 @@ public class WhiskyRepositoryImpl implements WhiskyRepositoryCustom {
         try{
             Criteria cr = session.createCriteria(Whisky.class);
             cr.createAlias("distillery", "distillery");
-            cr.add(Restrictions.eq("distillery.region",region));
+            cr.add(Restrictions.eq("distillery.name",name));
             cr.add(Restrictions.eq("year",year));
             result = cr.list();
         } catch(HibernateException ex){

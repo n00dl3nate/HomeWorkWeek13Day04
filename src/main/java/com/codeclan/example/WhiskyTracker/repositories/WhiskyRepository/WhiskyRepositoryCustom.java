@@ -10,5 +10,5 @@ public interface WhiskyRepositoryCustom {
 
     public List<Whisky> getAllWhiskysByRegion(String region);
 
-    public List<Whisky> getAllWhiskyByYearAndRegion(int year ,String region);
+    public List<Whisky> getAllWhiskyByNameAndYear(int year ,String name);
 }
